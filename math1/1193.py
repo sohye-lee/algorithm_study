@@ -1,9 +1,12 @@
 num = int(input())
 
-ans = 0
-n = 1
-for i in range(0, num):
-    for j in range(0,n):
-        ans = str(j)+"/"+str(n-j)
-    n += 1
-print(ans)
+group = 1
+while num > group:
+    num -= group
+    group += 1
+
+
+if group % 2 == 0:
+    print(f"{num}/{group - num + 1}")
+else:
+    print(f"{group-num + 1}/{num}")
